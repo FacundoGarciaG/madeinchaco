@@ -5,6 +5,11 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
+var proyectoRouter = require('./routes/proyecto');
+var contenidoRouter = require('./routes/contenido');
+var recorrerRouter = require('./routes/recorrer');
+var contactoRouter = require('./routes/contacto');
+var madeinchacoRouter = require('./routes/madeinchaco');
 
 
 var app = express();
@@ -20,6 +25,11 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
+app.use('/proyecto', proyectoRouter);
+app.use('/contenido', contenidoRouter);
+app.use('/recorrer', recorrerRouter);
+app.use('/contacto', contactoRouter);
+app.use('/madeinchaco', madeinchacoRouter);
 
 
 // catch 404 and forward to error handler
