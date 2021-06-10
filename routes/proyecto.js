@@ -3,7 +3,9 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('proyecto');
+  res.render('proyecto', {
+    isProyecto:true
+  });
 });
 
 module.exports = router;

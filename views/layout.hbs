@@ -26,10 +26,10 @@
     </div>
     <nav class="navegador-cabezal">
       <ul>
-        <li><a class="activo" href="/proyecto">PROYECTO</a></li>
-        <li><a href="/contenido">CONTENIDO</a></li>
-        <li><a href="/recorrer">RECORRER</a></li>
-        <li><a href="/contacto">CONTACTO</a></li>
+        <li><a class="{{#if isProyecto }} activo {{/if}}" href="/proyecto">PROYECTO</a></li>
+        <li><a class="{{#if isContenido }} activo {{/if}}" href="/contenido">CONTENIDO</a></li>
+        <li><a class="{{#if isRecorrer }} activo {{/if}}" href="/recorrer">RECORRER</a></li>
+        <li><a class="{{#if isContacto }} activo {{/if}}" href="/contacto">CONTACTO</a></li>
         <li class="experiencia"><a href="/madeinchaco">EXPERIENCIA</a></li>
       </ul>
     </nav>
