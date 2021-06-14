@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 require('dotenv').config();
+var session = require('express-session');
 
 var indexRouter = require('./routes/index');
 var proyectoRouter = require('./routes/proyecto');
@@ -28,6 +29,26 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(session({
+  secret: 'contactoMadeinchacoarg14/06/2021',
+  cookie: {maxAge: null},
+  resave:false,
+  saveUninitialized:true
+}));
+
+secured = async(req,res,next) => {
+  try{
+    console.log(req.session.id_usuario);
+    if(req.session.id_usuario) {
+      next();
+    } else {
+      res.redirect('/admin/login');
+    }
+  }catch(error){
+    console.log(error);
+  }
+}
+
 app.use('/', indexRouter);
 app.use('/proyecto', proyectoRouter);
 app.use('/contenido', contenidoRouter);
@@ -35,7 +56,7 @@ app.use('/recorrer', recorrerRouter);
 app.use('/contacto', contactoRouter);
 app.use('/madeinchaco', madeinchacoRouter);
 app.use('/admin/login', loginRouter);
-app.use('/admin/contenido', adminRouter);
+app.use('/admin/contenido', secured, adminRouter);
 
 
 // catch 404 and forward to error handler

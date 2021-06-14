@@ -18,6 +18,9 @@ router.post('/', async(req, res, next) =>{
         var data = await usuariosModel.getUserByUsernameAndPassword(usuario,password);
 
         if(data != undefined){
+            req.session.id_usuario = data.id; //toma de la query de la tabla
+            req.session.nombre = data.usuario; // madeinchaco
+
             res.redirect('/admin/contenido');
         }else{
             res.render('admin/login',{
