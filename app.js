@@ -13,6 +13,7 @@ var recorrerRouter = require('./routes/recorrer');
 var contactoRouter = require('./routes/contacto');
 var madeinchacoRouter = require('./routes/madeinchaco');
 var loginRouter = require('./routes/admin/login');
+var adminRouter = require('./routes/admin/contenido');
 
 
 var app = express();
@@ -34,6 +35,7 @@ app.use('/recorrer', recorrerRouter);
 app.use('/contacto', contactoRouter);
 app.use('/madeinchaco', madeinchacoRouter);
 app.use('/admin/login', loginRouter);
+app.use('/admin/contenido', adminRouter);
 
 
 // catch 404 and forward to error handler
