@@ -3,7 +3,9 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('madeinchaco');
+  res.render('madeinchaco', {
+    layout:'layout2'
+  });
 });
 
 module.exports = router;
