@@ -1,0 +1,50 @@
+/*Admin contenido*/
+
+.container {
+    font-size: 1.8rem;
+}
+
+.container p {
+    font-weight: 600 ;
+}
+
+.container  a {
+    font-size: 1.5rem;
+}
+
+.saludo {
+    margin-bottom: 5rem;
+}
+
+.listado {
+    margin-bottom: 1rem;
+}
+
+.saludo .cerrar {
+    margin: auto 0;
+}
+
+/* admin login */
+
+.alert {
+    margin-top: 5rem;
+    text-align: center;
+}
+
+.container form {
+    text-align: center;
+}
+
+.container form  input {
+    border: solid ;
+    font-size: 1.5rem;
+}
+
+.container button { 
+    margin-top: 5rem;
+    font-size: 1.5rem;
+}
+
+p {
+    margin: 0;
+}

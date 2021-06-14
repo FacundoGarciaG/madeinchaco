@@ -1,3 +1,51 @@
 <div class="contenedor">
-<h2>CONTENIDO</h2>
+    <div class="cuerpo">
+        <div class="container">
+
+            <div class="row saludo">
+                <div class="col">
+                    <h1> Hola {{usuario}}!</h1>
+                </div>
+                <div class="col cerrar text-end">
+                    <a class="btn btn-danger" href="">Cerrar sesión <i
+                            class="fas fa-sign-out-alt"></i></a>
+                </div>
+            </div>
+
+            <div class="row listado">
+                <div class="col">
+                    <h2>Listado de Contenido</h2>
+                </div>
+                <div class="col text-end">
+                    <a class="btn btn-success" href=""><i class="fas fa-plus-square"></i> Nuevo</a>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <table class="table table-dark table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Titulo</th>
+                                <th class="text-end" scope="col">Acciones</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Titulo</td>
+                                <td class="text-end">
+                                    <a class="btn btn-light" href=""><i class="fas fa-edit"></i></a>
+                                    <a class="btn btn-danger" href=""><i class="far fa-trash-alt"></i></a>
+                                </td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
