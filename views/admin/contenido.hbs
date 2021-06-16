@@ -33,15 +33,16 @@
                             </tr>
                         </thead>
                         <tbody>
+                            {{#each contenido}}
                             <tr>
-                                <th scope="row">1</th>
-                                <td>Titulo</td>
+                                <th scope="row">{{id}}</th>
+                                <td>{{titulo}}</td>
                                 <td class="text-end">
                                     <a class="btn btn-light" href=""><i class="fas fa-edit"></i></a>
                                     <a class="btn btn-danger" href=""><i class="far fa-trash-alt"></i></a>
                                 </td>
-
                             </tr>
+                            {{/each}}
                         </tbody>
                     </table>
                 </div>
