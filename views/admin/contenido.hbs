@@ -17,7 +17,7 @@
                     <h2>Listado de Contenido</h2>
                 </div>
                 <div class="col text-end">
-                    <a class="btn btn-success" href=""><i class="fas fa-plus-square"></i> Nuevo</a>
+                    <a class="btn btn-success" href="/admin/contenido/agregar"><i class="fas fa-plus-square"></i> Nuevo</a>
                 </div>
             </div>
 
@@ -39,7 +39,7 @@
                                 <td>{{titulo}}</td>
                                 <td class="text-end">
                                     <a class="btn btn-light" href=""><i class="fas fa-edit"></i></a>
-                                    <a class="btn btn-danger" href=""><i class="far fa-trash-alt"></i></a>
+                                    <a class="btn btn-danger" href="/admin/contenido/eliminar/{{id}}"><i class="far fa-trash-alt"></i></a>
                                 </td>
                             </tr>
                             {{/each}}

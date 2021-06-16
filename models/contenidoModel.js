@@ -6,4 +6,21 @@ async function getContenido () {
     return rows;
 }
 
-module.exports = { getContenido }
+async function insertContenido(obj){
+    try {
+        var query = 'insert into contenido set ?';
+        var rows = await pool.query(query, [obj]);
+        return rows;
+    }catch(error){
+        console.log(error);
+        throw error;
+    }
+}
+
+async function deleteContenidoByID(id){
+    var query = 'delete from contenido where id = ?'
+    var rows = await pool.query(query, [id]);
+    return rows;
+}
+
+module.exports = { getContenido, insertContenido, deleteContenidoByID }

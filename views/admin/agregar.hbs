@@ -1,0 +1,32 @@
+<div class="contenedor">
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <p>Agregar un nuevo contenido:</p>
+            <form method="post" action="/admin/contenido/agregar">
+            <div class="mb-3 row">
+                <div class="col-sm-12">
+                    <input type="text" class="form-control" placeholder="Titulo" name="titulo">
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <div class="col-sm-12">
+                    <textarea name="subtitulo" id="" class="form-control" cols="30" rows="10" placeholder="Subtitulo"></textarea>
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <div class="col-sm-12">
+                    <textarea name="cuerpo" id="" class="form-control" cols="30" rows="10" placeholder="Cuerpo"></textarea>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-success"><i class="far fa-check-square"></i> Guardar</button>
+            </form>
+            {{#if error}}
+            <div class="alert alert-warning" role="alert">
+            <p>{{message}}</p>
+            </div>
+            {{/if}}
+        </div>
+    </div>
+</div>
+</div>
