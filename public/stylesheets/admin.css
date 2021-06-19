@@ -38,6 +38,7 @@
 .container form  input, .container form textarea {
     border: solid ;
     font-size: 1.5rem;
+    resize: none;
 }
 
 .container button { 

@@ -2,26 +2,29 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <p>Agregar un nuevo contenido:</p>
-                <form method="post" action="/admin/contenido/agregar">
+                <p>Modificar contenido:</p>
+                <form method="post" action="/admin/contenido/modificar">
+                    <input type="hidden" value="{{contenido.id}}" name="id">
                     <div class="mb-3 row">
                         <div class="col-sm-12">
-                            <input type="text" class="form-control" placeholder="Titulo" name="titulo">
+                            <textarea name="titulo" id="" class="form-control" cols="30" rows="10"
+                                placeholder="Titulo">{{contenido.titulo}}</textarea>
                         </div>
                     </div>
                     <div class="mb-3 row">
                         <div class="col-sm-12">
                             <textarea name="subtitulo" id="" class="form-control" cols="30" rows="10"
-                                placeholder="Subtitulo"></textarea>
+                                placeholder="Subtitulo">{{contenido.subtitulo}}</textarea>
                         </div>
                     </div>
                     <div class="mb-3 row">
                         <div class="col-sm-12">
                             <textarea name="cuerpo" id="" class="form-control" cols="30" rows="10"
-                                placeholder="Cuerpo"></textarea>
+                                placeholder="Cuerpo">{{contenido.cuerpo}}</textarea>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-success"><i class="far fa-check-square"></i> Guardar</button>
+                    <button type="submit" class="btn btn-success"><i class="far fa-check-square"></i> Guardar
+                        cambios</button>
                 </form>
                 {{#if error}}
                 <div class="alert alert-warning" role="alert">

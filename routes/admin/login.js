@@ -10,6 +10,15 @@ router.get('/', function (req, res, next) {
       }); 
 });
 
+//LOGOUT
+router.get('/logout', function(req,res,next){
+    req.session.destroy(); 
+    res.render('admin/login', {
+        layout: 'admin/layout'
+    });
+})
+
+//LOGIN
 router.post('/', async(req, res, next) =>{
     try{
         var usuario = req.body.usuario;

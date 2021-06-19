@@ -70,7 +70,7 @@ html {
     justify-content: center;
 }
 
-.titulo {
+.contenedor-index .titulo {
     width: 90%;
     margin:auto;
     border: 1.5rem solid rgb(0, 0, 0);
