@@ -348,7 +348,7 @@ span{
 
 .cuerpo {
     margin: 0 auto 0;
-    width: 70%;
+    width: 99%;
 }
 
 .cuerpo h3 {
@@ -467,13 +467,37 @@ max-width: 1024px;
 }
 
 button span {
-    background-color: rgba(0, 0, 0, 0.342);
+    background-color: rgba(0, 0, 0, 1);
+    padding: .6rem;
+}
+
+.buscador {
+    margin: 5rem 0 2rem;
+}
+.buscador form input {
+    border: 1px solid #000;
+    font-size: 2rem;
     padding: .5rem;
+}
+
+.buscador form button {
+    background-color: #000;
+    height: 3.3rem;
+    width: 3rem;
+    border-style: none;
+    color: #fff;
+    font-size: 2rem;
+}
+
+.buscador form button:hover {
+    background-color: #fff;
+    color: #000;
+    transition: .7s;
 }
 
 .contenidos {
     border: 1px solid black;
-    margin: .5rem;
+    margin-bottom: 1rem;
     padding: .5rem;
 }
 
@@ -652,7 +676,7 @@ h2 {
         justify-content: center;
         align-items: center;
         margin: 0 .2rem;
-        width: 99%;
+    
     }
 
     .cuerpo h3 {
@@ -729,6 +753,21 @@ h2 {
         background-color: rgba(0, 0, 0, 0.342);
         width: 40%;
         margin: 0 auto;
+    }
+
+    .buscador {
+        margin: 2rem 0 1rem;
+    }
+    .buscador form input {
+        border: 1px solid #000;
+        font-size: 1.5rem;
+        padding: .5rem;
+    }
+    
+    .buscador form button {
+        height: 2.6rem;
+        width: 2.5rem;
+        font-size: 1.5rem;
     }
     
 
@@ -822,7 +861,6 @@ h2 {
     justify-content: center;
     align-items: center;
     margin: 0 .2rem;
-    width: 99%;
     }
 
     .cuerpo h3 {
@@ -896,6 +934,21 @@ h2 {
     background-color: rgba(0, 0, 0, 0.342);
     width: 40%;
     margin: 0 auto;
+    }
+
+    .buscador {
+        margin: 2rem 0 1rem;
+    }
+    .buscador form input {
+        border: 1px solid #000;
+        font-size: 1.5rem;
+        padding: .5rem;
+    }
+    
+    .buscador form button {
+        height: 2.6rem;
+        width: 2.5rem;
+        font-size: 1.5rem;
     }
 
     /*media recorrer*/

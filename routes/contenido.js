@@ -12,6 +12,8 @@ router.get('/', async function(req, res, next) {
     contenidos = await contenidoModel.buscarContenido(req.query.q);
   }
 
+  
+   
   res.render('contenido', {
     isContenido:true,
     contenidos,
@@ -19,6 +21,8 @@ router.get('/', async function(req, res, next) {
     q:req.query.q
   });
 });
+
+
 
 
 

@@ -36,7 +36,7 @@ router.post("/agregar", async (req, res, next) => {
     if (
       req.body.titulo != "" &&
       req.body.subtitulo != "" &&
-      req.body.cuerpo != ""
+      req.body.cuerpo != "" 
     ) {
       await contenidoModel.insertContenido(req.body);
       res.redirect("/admin/contenido");
@@ -84,6 +84,7 @@ router.post("/modificar", async (req, res, next) => {
       titulo: req.body.titulo,
       subtitulo: req.body.subtitulo,
       cuerpo: req.body.cuerpo,
+      imagen: req.body.imagen
       //id: req.body.id
     };
 
