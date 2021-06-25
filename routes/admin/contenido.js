@@ -7,17 +7,17 @@ var contenidoModel = require("../../models/contenidoModel");
 /*MUESTRA Y BUSCA*/
 
 router.get("/", async function (req, res, next) {
-  var contenido;
+  var contenidos;
   if (req.query.q === undefined) {
-    contenido = await contenidoModel.getContenido();
+    contenidos = await contenidoModel.getContenido();
   } else {
-    contenido = await contenidoModel.buscarContenido(req.query.q);
+    contenidos = await contenidoModel.buscarContenido(req.query.q);
   }
 
   res.render("admin/contenido", {
     layout: "admin/layout",
     usuario: req.session.nombre,
-    contenido,
+    contenidos,
     is_search:req.query.q !== undefined,
     q:req.query.q
   });

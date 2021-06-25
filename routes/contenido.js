@@ -3,18 +3,9 @@ var router = express.Router();
 var contenidoModel = require('../models/contenidoModel');
 
 
-/* GET home page. */
-/* router.get('/', async function(req, res, next) {
-  var contenidos = await contenidoModel.getContenido();
-
-  res.render('contenido', {
-    isContenido:true,
-    contenidos,
-  });
-}); */
-
 router.get('/', async function(req, res, next) {
   var contenidos;
+  
   if (req.query.q === undefined) {
     contenidos = await contenidoModel.getContenido();
   } else{

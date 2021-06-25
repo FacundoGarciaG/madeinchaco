@@ -808,6 +808,10 @@ h2 {
     font-weight: 600;
     }
 
+    .redes li a .icono {
+        margin: 0 2rem;
+    }
+
     .contenedor {
     margin-top: 12rem;
     }
