@@ -471,6 +471,25 @@ button span {
     padding: .5rem;
 }
 
+.contenidos {
+    border: 1px solid black;
+    margin: .5rem;
+    padding: .5rem;
+}
+
+.contenidos h4 {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.contenidos .subtitulo {
+    font-size: 1.8rem;
+}
+
+.contenidos .texto {
+    font-size: 1.5rem;
+}
+
 /* fin contenido */
 
 /*inicio ubicacion*/
@@ -910,7 +929,11 @@ h2 {
 @media screen and (min-width:1024px) and (max-width:1400px) {
 
     /*media general*/
+        
 
+        .paginas {
+            padding: 0;
+        }
     
         .contenedor-cabezal a h2 {
         font-size: 2.5rem;
@@ -940,6 +963,9 @@ h2 {
         margin-top: 2rem;
         }
 
+        .redes li a .icono {
+            margin: 0 1rem;
+        }
 
 
 }

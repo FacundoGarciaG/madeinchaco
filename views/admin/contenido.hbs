@@ -16,8 +16,20 @@
                 <div class="col">
                     <h2>Listado de Contenido</h2>
                 </div>
+               
                 <div class="col text-end">
-                    <a class="btn btn-success" href="/admin/contenido/agregar"><i class="fas fa-plus-square"></i> Nuevo</a>
+                    <a class="btn btn-success" href="/admin/contenido/agregar"><i class="fas fa-plus-square"></i>
+                        Nuevo</a>
+                </div>
+
+                 <div class="col">
+                    <div class="container-fluid">
+                        <form class="" action="/admin/contenido" method="get">
+                            <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search"
+                                name="q" {{#if q}} value="{{q}}" {{/if}}>
+                            <button class="btn btn-outline-dark" type="submit"><i class="fas fa-search"></i></button>
+                        </form>
+                    </div>
                 </div>
             </div>
 
@@ -38,13 +50,22 @@
                                 <th scope="row">{{id}}</th>
                                 <td>{{titulo}}</td>
                                 <td class="text-end">
-                                    <a class="btn btn-light" href="/admin/contenido/modificar/{{id}}"><i class="fas fa-edit"></i></a>
-                                    <a class="btn btn-danger" href="/admin/contenido/eliminar/{{id}}"><i class="far fa-trash-alt"></i></a>
+                                    <a class="btn btn-light" href="/admin/contenido/modificar/{{id}}"><i
+                                            class="fas fa-edit"></i></a>
+                                    <a class="btn btn-danger" href="/admin/contenido/eliminar/{{id}}"><i
+                                            class="far fa-trash-alt"></i></a>
                                 </td>
                             </tr>
                             {{/each}}
                         </tbody>
                     </table>
+                    {{#if is_search}}
+                    {{#unless contenido.length}}
+                    <div class="alert alert-warning" role="alert">
+                        No encontramos resultados para "<b>{{q}}</b>"
+                    </div>
+                    {{/unless}}
+                    {{/if}}
                 </div>
             </div>
         </div>

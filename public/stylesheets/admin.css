@@ -18,6 +18,25 @@
 
 .listado {
     margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.container-fluid {
+    padding: 0;
+}
+
+.container-fluid form{
+    display: flex;
+    align-items: center;
+}
+
+.container-fluid form button {
+    margin: 0;
+}
+
+.form-control {
+    height: 2rem;
 }
 
 .saludo .cerrar {

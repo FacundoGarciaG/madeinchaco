@@ -80,15 +80,27 @@
                         <span class="visually-hidden">Next</span>
                     </button>
                 </div>
+                <form class="d-flex" action="/contenido" method="get">
+                        <input class="form-control me-2" type="search" placeholder="Buscar contenido" aria-label="Search" name="q" {{#if q}} value="{{q}}" {{/if}}>
+                        <button class="btn btn-outline-dark" type="submit"><i class="fas fa-search"></i></button>
+                    </form>
                 <div class="contenidoBD">
                     {{#each contenidos}}
                     <div class="contenidos">
                         <h4>{{titulo}}</h4>
-                        <p>{{subtitulo}}</p>
-                        <p>{{cuerpo}}</p>
+                        <p class="subtitulo">{{subtitulo}}</p>
+                        <hr>
+                        <p class="texto">{{{cuerpo}}}</p>
                     </div>
                     {{/each}}
                 </div>
+                {{#if is_search}}
+                {{#unless contenidos.length}}
+                <div class="alert alert-warning" role="alert">
+                    No encontramos resultados para "<b>{{q}}</b>"
+                </div>
+                {{/unless}}
+                {{/if}}
             </div>
         </div>
     </main>

@@ -1,7 +1,7 @@
 var pool = require("./bd");
 
 async function getContenido() {
-  var query = "select * from contenido";
+  var query = "select * from contenido order by id desc";
   var rows = await pool.query(query);
   return rows;
 }
@@ -42,10 +42,19 @@ async function modificarContenidoByID(obj, id) {
   }
 }
 
+//BUSCAR
+
+async function buscarContenido(busqueda){
+  var query = 'select * from contenido where titulo like ? or subtitulo like ? or cuerpo like ?';
+  var rows = await pool.query(query, ['%' + busqueda + '%' , '%' + busqueda + '%' ,'%' + busqueda + '%' ]);
+  return rows;
+}
+
 module.exports = {
   getContenido,
   insertContenido,
   deleteContenidoByID,
   getContenidoByID,
-  modificarContenidoByID,
+  modificarContenidoByID, 
+  buscarContenido
 };
