@@ -286,7 +286,7 @@ span{
  }
 
  .navegador-cabezal ul .experiencia {
-     background-color: #DB7900;
+     background-color: #fff;
  }
 
  .navegador-cabezal ul .experiencia a {
@@ -405,6 +405,8 @@ h4::selection{
 
 .contenido-proyecto h4{
     font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
 }
 
 .explicativo  p{

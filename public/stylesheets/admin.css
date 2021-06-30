@@ -8,12 +8,12 @@
     font-weight: 600 ;
 }
 
-.container  a {
-    font-size: 1.5rem;
+.saludo {
+    color: #fff;
 }
 
-.saludo {
-    margin-bottom: 5rem;
+.container  a {
+    font-size: 1.5rem;
 }
 
 .listado {
@@ -41,6 +41,11 @@
 
 .saludo .cerrar {
     margin: auto 0;
+    
+}
+
+.saludo .cerrar a {
+    font-size: 1.5rem;
 }
 
 /* admin login */
@@ -63,5 +68,75 @@
 .container button { 
     margin-top: 2rem;
     font-size: 1.5rem;
+}
+
+@media screen and (max-width:576px) {
+
+
+    /*LAYOUT*/
+
+
+    .container {
+        padding: 0;
+        text-align: center;
+    }
+
+    .row {
+        width: 100%;
+    }
+
+    .row.tabla {
+        margin: 0  auto;
+        font-size: 1.2rem;
+    }
+
+    .col {
+        padding: 0;
+        margin: .5rem;
+    }
+
+    .cabezal {
+        width: 100vw;
+    }
+
+    .contenedor-cabezal {
+    margin: .2rem 0 0 0;
+    }
+
+    .saludo {
+        margin: auto;
+        align-items: center;
+    }
+
+    .saludo .cerrar {
+        width: max-content;
+    }
+
+    .saludo .cerrar a {
+        font-size: 1.2rem;
+    }
+
+    .saludo h1 {
+        font-size: 1.5rem;
+    }
+
+    .listado {
+        margin: auto;
+    }
+
+    .listado form input {
+        font-size: 1.2rem;
+        height: 1.5rem;
+    }
+
+    .listado .btn {
+        font-size: 1.2rem;
+    }
+
+    footer p {
+        font-size: 1rem;
+    }
+    
+    
 }
 

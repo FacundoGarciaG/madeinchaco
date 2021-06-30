@@ -27,17 +27,28 @@
 <body>
   <header class="cabezal">
     <div class="contenedor-cabezal">
-      <a href="/">
-        <h2 translate="no">MADE IN <br>CHACO</h2>
-      </a>
-      <nav class="menu-superior">
-        <ul class="redes paginas">
-          <li><a href=""><i class="icono fab fa-facebook-square"></i></a></li>
-          <li><a href="https://www.instagram.com/madeinchacoargentina/?hl=es-la" target="_blank"><i
-                class="icono fab fa-instagram"></i></a></li>
-          <li><a href=""><i class="icono fab fa-twitter-square"></i></a></li>
-        </ul>
+      <div class="row saludo">
+        <div class="col">
+          <a href="/">
+            <h2 translate="no">MADE IN <br>CHACO</h2>
+          </a>
+        </div>
+        <div class="col text-end">
+          <h1> Hola {{usuario}}!</h1>
+        </div>
+        <div class=" cerrar">
+          <a class="btn btn-danger" href="/admin/login/logout">Cerrar sesión <i class="fas fa-sign-out-alt"></i></a>
+        </div>
+      </div>
     </div>
+    {{#if usuario}}
+    <nav class="navegador-cabezal">
+      <ul>
+        <li><a class="{{#if isContenido }} activo {{/if}}" href="/admin/contenido">CONTENIDOS</a></li>
+        <li><a class="{{#if isContacto }} activo {{/if}}" href="/admin/contacto">CONTACTO</a></li>
+      </ul>
+    </nav>
+    {{/if}}
   </header>
 
   {{{body}}}

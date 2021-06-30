@@ -1,5 +1,6 @@
 var pool = require("./bd");
 
+
 async function getContenido() {
   var query = "select * from contenido order by id desc";
   var rows = await pool.query(query);
@@ -50,11 +51,12 @@ async function buscarContenido(busqueda){
   return rows;
 }
 
+
 module.exports = {
   getContenido,
   insertContenido,
   deleteContenidoByID,
   getContenidoByID,
   modificarContenidoByID, 
-  buscarContenido
+  buscarContenido,
 };

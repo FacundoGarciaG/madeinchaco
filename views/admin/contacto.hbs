@@ -1,0 +1,57 @@
+<div class="contenedor">
+    <div class="container">
+
+        <div class="row listado">
+            <div class="col">
+                <h2>Listado de contactos:</h2>
+            </div>
+            <div class="col">
+                <div class="container-fluid">
+                    <form class="" action="/admin/contenido" method="get">
+                        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" name="q"
+                            {{#if q}} value="{{q}}" {{/if}}>
+                        <button class="btn btn-outline-dark" type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+        <div class="row tabla">
+            <div class="col">
+                <table class="table table-dark table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th class="col">Nombre</th>
+                            <th class="col">Telefono</th>
+                            <th scope="col">Email</th>
+                            <th class="col" scope="col">Mensaje</th>
+
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each contactos}}
+                        <tr>
+                            <th scope="row">{{id}}</th>
+                            <td>{{nombre}}</td>
+                            <td>{{telefono}}</td>
+                            <td>{{email}}</td>
+                            <td>{{mensaje}}</td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+                {{#if is_search}}
+                {{#unless contenido.length}}
+                <div class="alert alert-warning" role="alert">
+                    No encontramos resultados para "<b>{{q}}</b>"
+                </div>
+                {{/unless}}
+                {{/if}}
+            </div>
+        </div>
+
+
+    </div>
+</div>

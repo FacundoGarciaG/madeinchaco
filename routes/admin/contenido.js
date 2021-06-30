@@ -19,7 +19,8 @@ router.get("/", async function (req, res, next) {
     usuario: req.session.nombre,
     contenidos,
     is_search:req.query.q !== undefined,
-    q:req.query.q
+    q:req.query.q,
+    isContenido:true
   });
 });
 
