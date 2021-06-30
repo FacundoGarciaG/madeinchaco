@@ -102,6 +102,10 @@
     margin: .2rem 0 0 0;
     }
 
+    .contenedor-cabezal a h2 {
+        width: max-content;
+    }
+
     .saludo {
         margin: auto;
         align-items: center;

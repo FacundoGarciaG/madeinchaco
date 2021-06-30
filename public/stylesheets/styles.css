@@ -654,7 +654,11 @@ h2 {
     .icono{
         font-size: 2rem;
     }
-    
+    .redes {
+
+        padding: .5rem 0;
+    }
+
     .redes li a .icono {
         margin: 0 1.5rem;
     }
@@ -705,9 +709,9 @@ h2 {
             font-size: 6rem;
              }
 
- .titulo {
+ .contenedor-index .titulo {
       border: 1rem solid rgb(0, 0, 0);
-      background: url(../img/Bandera.png) 50% 50% fixed;
+      background: url(../images/Bandera.png) 100% 50% fixed;
       background-size: contain;
     }
 
