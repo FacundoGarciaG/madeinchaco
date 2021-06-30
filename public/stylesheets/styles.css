@@ -893,7 +893,7 @@ h2 {
  .titulo {
       border: 1rem solid rgb(0, 0, 0);
       background: url(../img/Bandera.png) 50% 65% fixed;
-      background-size: contain;
+      background-size: cover;
     }
 
     .titulo h1 {
@@ -992,6 +992,9 @@ h2 {
 
     /*media general*/
         
+        .contenedor-index .titulo h1{
+            font-size: 20rem;
+        }
 
         .paginas {
             padding: 0;

@@ -6,19 +6,20 @@
                 <form method="post" action="/admin/contenido/agregar">
                     <div class="mb-3 row">
                         <div class="col-sm-12">
-                            <input type="text" class="form-control" placeholder="Titulo" name="titulo">
+                            <label for="titulo">TITULO</label>
+                            <input type="text" class="form-control" name="titulo">
                         </div>
                     </div>
                     <div class="mb-3 row">
                         <div class="col-sm-12">
-                            <textarea name="subtitulo" id="" class="form-control" cols="30" rows="10"
-                                placeholder="Subtitulo"></textarea>
+                            <label for="subtitulo">SUBTITULO</label>
+                            <textarea name="subtitulo" id="" class="form-control" cols="30" rows="10"></textarea>
                         </div>
                     </div>
                     <div class="mb-3 row">
                         <div class="col-sm-12">
-                            <textarea name="cuerpo" id="" class="form-control" cols="30" rows="10"
-                                placeholder="Cuerpo"></textarea>
+                            <label for="cuerpo">CUERPO</label>
+                            <textarea name="cuerpo" id="" class="form-control" cols="30" rows="10"></textarea>
                         </div>
                     </div>
                     {{!-- <div class="mb-3 row">

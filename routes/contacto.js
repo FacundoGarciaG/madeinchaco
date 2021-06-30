@@ -1,11 +1,11 @@
 var express = require('express');
 var router = express.Router();
 var nodemailer = require('nodemailer');
-
+var contactoModel = require('./../models/contactoModel');
 /* GET home page. */
 router.get('/', function (req, res, next) {
   res.render('contacto', {
-    isContacto: true
+    isContacto: true,
   });
 });
 
@@ -34,8 +34,11 @@ router.post('/', async (req, res, next) => {
     }
   });
 
+  var contacto = await contactoModel.insertContacto(req.body);
   var info = await transport.sendMail(obj);
+  
   res.render('contacto', {message: 'mensaje enviado correctamente!'});
 });
+
 
 module.exports = router;

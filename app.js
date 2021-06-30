@@ -58,7 +58,7 @@ app.use('/contacto', contactoRouter);
 app.use('/madeinchaco', madeinchacoRouter);
 app.use('/admin/login', loginRouter);
 app.use('/admin/contenido', secured, adminContRouter);
-app.use('/admin/contacto', secured, adminContacRouter);
+app.use('/admin/contacto', secured, adminContacRouter);  
 
 
 // catch 404 and forward to error handler

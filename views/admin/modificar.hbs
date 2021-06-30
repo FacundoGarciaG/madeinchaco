@@ -7,20 +7,23 @@
                     <input type="hidden" value="{{contenido.id}}" name="id">
                     <div class="mb-3 row">
                         <div class="col-sm-12">
+                            <label for="titulo">TITULO</label>
                             <textarea name="titulo" id="" class="form-control" cols="30" rows="10"
-                                placeholder="Titulo">{{contenido.titulo}}</textarea>
+                                >{{contenido.titulo}}</textarea>
                         </div>
                     </div>
                     <div class="mb-3 row">
                         <div class="col-sm-12">
+                            <label for="subtitulo">SUBTITULO</label>
                             <textarea name="subtitulo" id="" class="form-control" cols="30" rows="10"
-                                placeholder="Subtitulo">{{contenido.subtitulo}}</textarea>
+                                >{{contenido.subtitulo}}</textarea>
                         </div>
                     </div>
                     <div class="mb-3 row">
                         <div class="col-sm-12">
-                            <textarea name="cuerpo" id="" class="form-control" cols="30" rows="10"
-                                placeholder="Cuerpo">{{contenido.cuerpo}}</textarea>
+                            <label for="cuerpo">CUERPO</label>
+                            <textarea name="cuerpo" id="" class="form-control" cols="30"
+                                rows="10">{{contenido.cuerpo}}</textarea>
                         </div>
                     </div>
                     <button type="submit" class="btn btn-success"><i class="far fa-check-square"></i> Guardar

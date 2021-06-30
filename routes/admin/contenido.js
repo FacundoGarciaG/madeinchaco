@@ -85,22 +85,8 @@ router.post("/modificar", async (req, res, next) => {
       titulo: req.body.titulo,
       subtitulo: req.body.subtitulo,
       cuerpo: req.body.cuerpo,
-      imagen: req.body.imagen
-      //id: req.body.id
+      id: req.body.id 
     };
-
-    //console.log(obj)
-
-    /* if (req.body.titulo != "" && req.body.subtitulo != "" && req.body.cuerpo != "" ){
-            await contenidoModel.modificarContenidoByID(obj, req.body.id);
-            res.redirect('/admin/contenido');
-        } else {
-            res.render('admin/modificar', {
-                layout:'admin/layout',
-                error: true,
-                message: 'Todos los campos son requeridos'
-            });
-        } */
 
     await contenidoModel.modificarContenidoByID(obj, req.body.id);
     res.redirect("/admin/contenido");
