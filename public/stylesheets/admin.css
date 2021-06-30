@@ -72,9 +72,8 @@
 
 @media screen and (max-width:576px) {
 
-
+    
     /*LAYOUT*/
-
 
     .container {
         padding: 0;
@@ -136,7 +135,28 @@
     footer p {
         font-size: 1rem;
     }
+
+    /*LOGIN*/
+
+    .container div {
+        width: 100%;
+    }
     
+
+    .container .row form {
+        padding: 0;
+        width: 100%;
+    }
     
+    .container .row form div{
+        margin: 0;
+        width: 100%;
+        padding: 0;
+    }
+
+    .container .row form .row input{
+        width: 50%;
+        margin: auto;
+    }
 }
 
