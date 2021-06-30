@@ -10,6 +10,17 @@
 
 .saludo {
     color: #fff;
+    width: 100%;
+}
+
+.sesion {
+display: flex;
+align-items: center;
+justify-content: flex-end;
+}
+
+.sesion h1{
+ margin-right: 1rem;
 }
 
 .container  a {
@@ -109,10 +120,13 @@
     .saludo {
         margin: auto;
         align-items: center;
+        display: flex;
+        justify-content: space-between;
     }
 
     .saludo .cerrar {
         width: max-content;
+        font-size: .8rem;
     }
 
     .saludo .cerrar a {
