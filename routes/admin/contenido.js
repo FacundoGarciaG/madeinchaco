@@ -50,12 +50,12 @@ router.post("/agregar", async (req, res, next) => {
     ) {
       const result = await cloudinary.v2.uploader.upload(req.file.path);
       console.log(result);
-      await fs.unlink(req.file.path);
+      
       await contenidoModel.insertImagen(result.url);
       await contenidoModel.insertContenido(req.body);
       console.log (req.body);
       console.log(req.file);
-      
+      await fs.unlink(req.file.path);
       res.redirect("/admin/contenido");
     } else {
       res.render("admin/agregar", {
