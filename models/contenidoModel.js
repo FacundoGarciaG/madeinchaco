@@ -18,6 +18,17 @@ async function insertContenido(obj) {
   }
 }
 
+async function insertImagen(img) {
+  try {
+    var query = "insert into contenido set imagen = ?";
+    var rows = await pool.query(query, [img]);
+    return rows;
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
+}
+
 async function deleteContenidoByID(id) {
   var query = "delete from contenido where id = ?";
   var rows = await pool.query(query, [id]);
@@ -59,4 +70,5 @@ module.exports = {
   getContenidoByID,
   modificarContenidoByID, 
   buscarContenido,
+  insertImagen
 };

@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var multer = require('multer');
 
 require('dotenv').config();
 var session = require('express-session');
@@ -29,6 +30,14 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+const storage = multer.diskStorage({
+  destination: path.join(__dirname, 'public/uploads'),
+  filename: (req, file, cb) => {
+    cb(null, new Date().getTime() + path.extname(file.originalname));
+  }
+})
+app.use(multer({storage}).single('imagen'));
 
 app.use(session({
   secret: 'contactoMadeinchacoarg14/06/2021',

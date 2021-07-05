@@ -1,6 +1,15 @@
 var express = require("express");
 var router = express.Router();
 var contenidoModel = require("../../models/contenidoModel");
+var cloudinary = require ('cloudinary');
+
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET
+})
+
+var fs = require('fs-extra');
 
 /* GET home page. */
 
@@ -37,9 +46,16 @@ router.post("/agregar", async (req, res, next) => {
     if (
       req.body.titulo != "" &&
       req.body.subtitulo != "" &&
-      req.body.cuerpo != "" 
+      req.body.cuerpo != ""
     ) {
+      const result = await cloudinary.v2.uploader.upload(req.file.path);
+      console.log(result);
+      await fs.unlink(req.file.path);
+      await contenidoModel.insertImagen(result.url);
       await contenidoModel.insertContenido(req.body);
+      console.log (req.body);
+      console.log(req.file);
+      
       res.redirect("/admin/contenido");
     } else {
       res.render("admin/agregar", {
