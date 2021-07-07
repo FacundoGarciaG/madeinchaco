@@ -81,7 +81,6 @@ justify-content: flex-end;
 }
 
 .container button { 
-    margin-top: 2rem;
     font-size: 1.5rem;
 }
 
@@ -90,6 +89,12 @@ justify-content: flex-end;
 label {
 margin: 5rem 0 1rem;
 font-weight: 800;
+}
+
+/*MODIFICAR*/
+
+.img-admin {
+    max-width: 640px;
 }
 
 @media screen and (max-width:576px) {
@@ -159,6 +164,7 @@ font-weight: 800;
 
     .listado .btn {
         font-size: 1.2rem;
+        margin-top: 2rem;
     }
 
     footer p {

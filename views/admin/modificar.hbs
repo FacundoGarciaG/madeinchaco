@@ -3,20 +3,20 @@
         <div class="row">
             <div class="col">
                 <p>Modificar contenido:</p>
-                <form method="post" action="/admin/contenido/modificar">
+                <form method="post" action="/admin/contenido/modificar" enctype="multipart/form-data">
                     <input type="hidden" value="{{contenido.id}}" name="id">
                     <div class="mb-3 row">
                         <div class="col-sm-12">
                             <label for="titulo">TITULO</label>
-                            <textarea name="titulo" id="" class="form-control" cols="30" rows="10"
-                                >{{contenido.titulo}}</textarea>
+                            <textarea name="titulo" id="" class="form-control" cols="30"
+                                rows="10">{{contenido.titulo}}</textarea>
                         </div>
                     </div>
                     <div class="mb-3 row">
                         <div class="col-sm-12">
                             <label for="subtitulo">SUBTITULO</label>
-                            <textarea name="subtitulo" id="" class="form-control" cols="30" rows="10"
-                                >{{contenido.subtitulo}}</textarea>
+                            <textarea name="subtitulo" id="" class="form-control" cols="30"
+                                rows="10">{{contenido.subtitulo}}</textarea>
                         </div>
                     </div>
                     <div class="mb-3 row">
@@ -26,8 +26,23 @@
                                 rows="10">{{contenido.cuerpo}}</textarea>
                         </div>
                     </div>
+                    <div class="mb-3 row">
+                        <div class="col-sm-12">
+
+
+                            <div class="mb-3 row p-5">
+                                <div class="col-sm-12">
+                                    <input type="file" name="imagen" class="form-control">
+                                </div>
+                            </div>
+
+                            <img class="img-admin" src="{{contenido.imagen}}" alt="{{contenido.titulo}}">
+                        </div>
+                    </div>
                     <button type="submit" class="btn btn-success"><i class="far fa-check-square"></i> Guardar
                         cambios</button>
+
+                    <a href="/admin/contenido" class="btn btn-dark">Cancelar</a>
                 </form>
                 {{#if error}}
                 <div class="alert alert-warning" role="alert">

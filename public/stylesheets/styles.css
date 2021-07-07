@@ -228,9 +228,6 @@ span{
 .cabezal{
     background-color: black;
     position: fixed;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     width: 100%;
     top: 0;
     box-shadow: 0 0 7rem black;
@@ -281,16 +278,14 @@ span{
 }
 
  .navegador-cabezal ul li{
-     width:100%;
+     width:15%;
      transition: all .7s ease;
  }
 
- .navegador-cabezal ul .experiencia {
-     background-color: #fff;
- }
+
 
  .navegador-cabezal ul .experiencia a {
-    color: #000;
+    color: #fff;
  }
 
  .navegador-cabezal ul li a {
@@ -303,38 +298,33 @@ span{
  }
 
  nav ul li a.activo {
-    background-color:  rgb(85, 85, 85);
     border-top: 2px solid white;
 }
 
-.cabezal .navegador-cabezal ul li:hover {
-    background-color: rgb(85, 85, 85);
 
-}
-
-.experiencia:hover {
+.experiencia:hover > a{
     animation: colores 4s infinite forwards ;
    }
 
 @keyframes colores {
    from {
-       background-color: #1db062;
-       color: black;
+       color: #1db062;
+       
    }
 
    33.3%{
-       background-color: #fff;
-       color: #000;
+       color: #fff;
+       
    }
 
    66.6%{
-       background-color: #94c9e9;
-       color: #000;
+       color: #94c9e9;
+       
    }
 
    to {
-    background-color: #1db062;
-    color: black;
+    color: #1db062;
+    
    }
 }
 
@@ -355,7 +345,7 @@ span{
     margin: auto;
     text-align: center;
     font-weight: 900;
-    font-size: 2rem;
+    font-size: 5rem;
 }
 
 hr {
@@ -474,7 +464,7 @@ button span {
 }
 
 .buscador {
-    margin: 5rem 0 2rem;
+    margin: 2rem 0 0;
 }
 .buscador form input {
     border: 1px solid #000;
@@ -497,25 +487,78 @@ button span {
     transition: .7s;
 }
 
-.contenidos {
-    border: 1px solid black;
-    margin-bottom: 1rem;
-    padding: .5rem;
+.contenidoBD {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
+
+.contenidos {
+    position: relative;
+    display: flex;
+    margin: 1.5rem 0;
+    height: 431px;
+    width: calc((100% - 8rem) / 3 );
+    overflow: hidden;
+    box-shadow: 0px 15px 25px rgba(0,0,0,.5);
+    cursor: pointer;
+}
+
+.contenidos .cont-text {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.582);
+    transition: all 500ms ease-out;
+    opacity: 0;
+    visibility: hidden;
+    text-align: center;
+}
+
+.contenidos:hover > .cont-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 1;
+    visibility: visible;
+}
+
+/* .contenidos:hover > .cont-text h4 {
+  margin-bottom: 2rem;
+} */
+
 
 .contenidos h4 {
     font-size: 2rem;
     font-weight: 600;
+    color: #fff;
+    /* margin-top: 2rem;
+    margin-bottom: 30rem; */
+    transition: all 500ms ease-out;
 }
 
 .contenidos .subtitulo {
     font-size: 1.8rem;
+    color: #fff;
+    
 }
 
 .contenidos .texto {
     font-size: 1.5rem;
+    color: #fff;
+    line-height: 1.5;
+
 }
 
+.contenidos img {
+   width: 100%;
+   height: 100%;
+   transition: all 500ms ease-out;
+}
 /* fin contenido */
 
 /*inicio ubicacion*/
@@ -572,6 +615,22 @@ input[type="submit"]:hover {
 textarea:focus, input:focus {
     border: 2px solid rgb(0, 0, 0);
     background-color: #fff;
+}
+
+.mensaje-ok {
+    margin: auto;
+    width: 50%;
+    text-align: center;
+    padding: 2rem;
+    font-size: 5rem;
+    color: #000;
+    margin-top: 4rem;
+}
+
+.mensaje-ok a {
+ color: #000;
+ text-decoration: none;
+ float: right;
 }
 
 /* fin contacto */

@@ -7,21 +7,10 @@ async function getContenido() {
   return rows;
 }
 
-async function insertContenido(obj) {
+async function insertContenido(obj, img) {
   try {
-    var query = "insert into contenido set ?";
-    var rows = await pool.query(query, [obj]);
-    return rows;
-  } catch (error) {
-    console.log(error);
-    throw error;
-  }
-}
-
-async function insertImagen(img) {
-  try {
-    var query = "insert into contenido set imagen = ?";
-    var rows = await pool.query(query, [img]);
+    var query = "insert into contenido set ?, imagen = ?";
+    var rows = await pool.query(query, [obj, img]);
     return rows;
   } catch (error) {
     console.log(error);
@@ -44,10 +33,10 @@ async function getContenidoByID(id) {
 }
 
 //modificar el contenido
-async function modificarContenidoByID(obj, id) {
+async function modificarContenidoByID(obj,img, id) {
   try {
-    var query = "update contenido set ? where id= ?";
-    var rows = await pool.query(query, [obj, id]);
+    var query = "update contenido set ?, imagen = ? where id= ?";
+    var rows = await pool.query(query, [obj,img, id]);
     return rows;
   } catch (error) {
     throw error;
@@ -70,5 +59,4 @@ module.exports = {
   getContenidoByID,
   modificarContenidoByID, 
   buscarContenido,
-  insertImagen
 };

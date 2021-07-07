@@ -22,12 +22,17 @@
                             <textarea name="cuerpo" id="" class="form-control" cols="30" rows="10"></textarea>
                         </div>
                     </div>
-                    <div class="mb-3 row">
+
+
+                    <div class="mb-3 row p-5">
                         <div class="col-sm-12">
-                            <input type="file" name="imagen">
+                        <input type="file" name="imagen" class="form-control" >
                         </div>
                     </div>
+
+
                     <button type="submit" class="btn btn-success"><i class="far fa-check-square"></i> Guardar</button>
+                    <a href="/admin/contenido" href="/admin/contenido" class="btn btn-dark">Cancelar</a>
                 </form>
                 {{#if error}}
                 <div class="alert alert-warning" role="alert">
