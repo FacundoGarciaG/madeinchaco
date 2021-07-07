@@ -34,25 +34,28 @@
           </a>
         </div>
         {{#if usuario}}
+        <div class="col-sm-8 d-flex align-items-center justify-content-center">
+          <nav class="navegador-cabezal">
+            <ul>
+              <li><a class="{{#if isContenido }} activo {{/if}}" href="/admin/contenido">CONTENIDOS</a></li>
+              <li><a class="{{#if isContacto }} activo {{/if}}" href="/admin/contacto">CONTACTO</a></li>
+            </ul>
+          </nav>
+        </div>
+        {{/if}}
+        {{#if usuario}}
         <div class="col sesion text-end">
-            <h1> Hola {{usuario}}!</h1>
-            
+          <h1> Hola {{usuario}}!</h1>
+
           <div class=" cerrar ">
             <a class="btn btn-danger" href="/admin/login/logout"><i class="fas fa-sign-out-alt"></i></a>
           </div>
-          
+
         </div>
         {{/if}}
       </div>
     </div>
-    {{#if usuario}}
-    <nav class="navegador-cabezal">
-      <ul>
-        <li><a class="{{#if isContenido }} activo {{/if}}" href="/admin/contenido">CONTENIDOS</a></li>
-        <li><a class="{{#if isContacto }} activo {{/if}}" href="/admin/contacto">CONTACTO</a></li>
-      </ul>
-    </nav>
-    {{/if}}
+
   </header>
 
   {{{body}}}
