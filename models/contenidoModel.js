@@ -33,7 +33,18 @@ async function getContenidoByID(id) {
 }
 
 //modificar el contenido
-async function modificarContenidoByID(obj,img, id) {
+
+async function modificarContenidoByID(obj, id) {
+  try {
+    var query = "update contenido set ? where id= ?";
+    var rows = await pool.query(query, [obj, id]);
+    return rows;
+  } catch (error) {
+    throw error;
+  }
+}
+
+async function modificarContenidoByIDImg(obj,img, id) {
   try {
     var query = "update contenido set ?, imagen = ? where id= ?";
     var rows = await pool.query(query, [obj,img, id]);
@@ -57,6 +68,7 @@ module.exports = {
   insertContenido,
   deleteContenidoByID,
   getContenidoByID,
-  modificarContenidoByID, 
+  modificarContenidoByIDImg, 
+  modificarContenidoByID,
   buscarContenido,
 };

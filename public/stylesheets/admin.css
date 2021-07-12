@@ -1,11 +1,17 @@
 /*Admin contenido*/
 
+
+
 .container {
     font-size: 1.8rem;
 }
 
 .container p {
     font-weight: 600 ;
+}
+
+.navegador-cabezal ul li {
+    width: 50%;
 }
 
 .saludo {
@@ -60,6 +66,7 @@ justify-content: flex-end;
 }
 
 /* admin login */
+
 
 .alert {
     margin-top: 5rem;
@@ -133,6 +140,13 @@ font-weight: 800;
         width: max-content;
     }
 
+    .navegador-cabezal {
+        position: absolute;
+        left: 0;
+    }
+
+  
+
     .saludo {
         margin: auto;
         align-items: center;
@@ -153,8 +167,18 @@ font-weight: 800;
         font-size: 1.5rem;
     }
 
-    .listado {
+    .container .listado {
         margin: auto;
+        align-items: flex-end;
+    }
+
+    .container-fluid .search {
+    display: flex;
+    align-items: flex-end;
+    }
+
+    .container .tabla {
+        width: 100%;
     }
 
     .listado form input {
@@ -173,8 +197,11 @@ font-weight: 800;
 
     /*LOGIN*/
 
-    .container div {
-        width: 100%;
+    .container > div {
+        margin: 0 auto;
+        width: 90%;
+        display: flex;
+        justify-content: center;
     }
     
 
@@ -195,3 +222,13 @@ font-weight: 800;
     }
 }
 
+/*CONTACTO*/
+
+    .apellido, .telefono, .email {
+    display: none;
+    }
+
+    .container .listado {
+        width: 100%;
+        align-items: flex-end;
+    }

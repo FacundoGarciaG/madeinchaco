@@ -7,7 +7,7 @@
             </div>
             <div class="col">
                 <div class="container-fluid">
-                    <form class="" action="/admin/contacto" method="get">
+                    <form class="search" action="/admin/contacto" method="get">
                         <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" name="q"
                             {{#if q}} value="{{q}}" {{/if}}>
                         <button class="btn btn-outline-dark" type="submit"><i class="fas fa-search"></i></button>
@@ -23,11 +23,12 @@
                         <tr>
                             <th scope="col">#</th>
                             <th class="col">Nombre</th>
-                            <th class="col">Apellido</th>
-                            <th class="col">Telefono</th>
-                            <th scope="col">Email</th>
+                            <th class="col apellido">Apellido</th>
+                            <th class="col telefono">Telefono</th>
+                            <th class="email" scope="col">Email</th>
                             <th class="col" scope="col">Mensaje</th>
                             <th class="col">Mostrar</th>
+                            <th class="col">Eliminar</th>
 
 
                         </tr>
@@ -37,12 +38,14 @@
                         <tr>
                             <th scope="row">{{id}}</th>
                             <td>{{nombre}}</td>
-                            <td>{{apellido}}</td>
-                            <td>{{telefono}}</td>
-                            <td>{{email}}</td>
+                            <td class="apellido">{{apellido}}</td>
+                            <td class="telefono">{{telefono}}</td>
+                            <td class="email">{{email}}</td>
                             <td>{{comentarios}}</td>
-                            <td><input class="form-check-input mt-0" type="checkbox" value="" 
-                                    aria-label="Checkbox for following text input"></td>
+                            <td><input {{!-- id="{{selector}}" --}} class="form-check-input mt-0" type="checkbox"
+                                    value="" aria-label="Checkbox for following text input"></td>
+                            <td><a class="btn btn-danger" href="/admin/contacto/eliminarmsj/{{id}}"><i
+                                            class="far fa-trash-alt"></i></a></td>
                         </tr>
                         {{/each}}
                     </tbody>

@@ -290,7 +290,7 @@ span{
 
  .navegador-cabezal ul li a {
     color: white;
-    margin: 0;
+    margin: 0 1rem;
     font-weight: 600;
     font-size: 1.8rem;
     padding: .4rem 0;
@@ -333,7 +333,7 @@ span{
 }
 
 .contenedor {
-    margin-top: 20rem;
+    margin-top: 15rem;
 }
 
 .cuerpo {
@@ -428,42 +428,13 @@ h4::selection{
 /*fin proyecto*/
 
 /* inicio contenido */
-.carousel {
-    width: 100%;
-    margin: 0 auto;
-}
-
-.carousel-item {
-    height: 70rem;
-}
-
-.carousel-item img {
-height: 100%;
-margin: 0 auto;
-max-width: 1024px;
-}
-
-.carousel-caption {
-    background-color: rgba(0, 0, 0, 0.342);
-    width: 40%;
-    margin: 0 auto;
-}
-
-.carousel-caption h5 {
-    font-size: 3rem;
-    margin: 0 auto;
-}
-
-.carousel-caption p {
-    font-size: 1.5rem;
-}
 
 button span {
     background-color: rgba(0, 0, 0, 1);
     padding: .6rem;
 }
 
-.buscador {
+/* .buscador {
     margin: 2rem 0 0;
 }
 .buscador form input {
@@ -485,12 +456,13 @@ button span {
     background-color: #fff;
     color: #000;
     transition: .7s;
-}
+} */
 
 .contenidoBD {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    
 }
 
 .contenidos {
@@ -527,17 +499,15 @@ button span {
     visibility: visible;
 }
 
-/* .contenidos:hover > .cont-text h4 {
+.contenidos:hover > .cont-text h4 {
   margin-bottom: 2rem;
-} */
+}
 
 
 .contenidos h4 {
     font-size: 2rem;
     font-weight: 600;
     color: #fff;
-    /* margin-top: 2rem;
-    margin-bottom: 30rem; */
     transition: all 500ms ease-out;
 }
 
@@ -561,7 +531,7 @@ button span {
 }
 /* fin contenido */
 
-/*inicio ubicacion*/
+/*inicio recorrer*/
 
 .ubicacion .mapa {
     width: 100%;
@@ -723,10 +693,21 @@ h2 {
 
     .navegador-cabezal {
         width: 100%;
+        position: absolute;
+        top: 100%;
+        background-color: #000;
     }
 
+    .navegador-cabezal ul {
+        justify-content: center;
+    }
+
+    .navegador-cabezal ul li {
+        width: 19%;
+    }
     .navegador-cabezal ul li a {
         font-size: 1rem;
+        margin: .1rem;
         font-weight: 600;
     }
 
@@ -797,29 +778,67 @@ h2 {
     }
 
     /* media contenido*/
-
-    .carousel {
+ 
+    
+    .contenidos {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-bottom: 2rem;
+        height: 100%;
         width: 100%;
-        margin: 0 auto;
+        overflow: visible;
+        box-shadow: none;
+        background-color: rgb(0, 0, 0);
+        padding: .5rem;
     }
     
-    .carousel-item {
-        height: 26rem;
+    .contenidos .cont-text {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: auto;
+        width: 95%;
+        height: 100%;
+        background-color: rgb(0, 0, 0);
+        transition: none;
+        opacity: 1;
+        visibility: visible;
+        text-align: center;
     }
     
-    .carousel-item img {
-    height: 100%;
-    margin: 0 auto;
-    max-width: 400px;
+    
+    .contenidos h4 {
+        font-size: 1.8rem;
+        font-weight: 600;
+        margin-top: 1rem;
+        color: rgb(255, 255, 255);
+        transition: none;
     }
     
-    .carousel-caption {
-        background-color: rgba(0, 0, 0, 0.342);
-        width: 40%;
-        margin: 0 auto;
+    .contenidos .subtitulo {
+        font-size: 1.5rem;
+        color: rgb(255, 255, 255);
+        
     }
+    
+    .contenidos .texto {
+        font-size: 1.5rem;
+        color: rgb(255, 255, 255);
+        line-height: 1.5;
+    
+    }
+    
+    .contenidos img {
+       width: 100%;
+       height: 200px;
+       transition: none;
+    }
+   
 
-    .buscador {
+   /*  .buscador {
         margin: 2rem 0 1rem;
     }
     .buscador form input {
@@ -832,7 +851,7 @@ h2 {
         height: 2.6rem;
         width: 2.5rem;
         font-size: 1.5rem;
-    }
+    } */
     
 
     /*media recorrer*/
@@ -860,6 +879,11 @@ h2 {
 
     .formulario textarea {
         height: 10rem;
+    }
+
+    .mensaje-ok {
+        width: 85%;
+        font-size: 2.5rem;
     }
 
     /*media experiencia*/
@@ -979,7 +1003,7 @@ h2 {
 
 /* media contenido*/
 
-    .carousel {
+    /* .carousel {
     width: 100%;
     margin: 0 auto;
     }
@@ -1013,7 +1037,7 @@ h2 {
         height: 2.6rem;
         width: 2.5rem;
         font-size: 1.5rem;
-    }
+    } */
 
     /*media recorrer*/
 

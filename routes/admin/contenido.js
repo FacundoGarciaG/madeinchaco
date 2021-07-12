@@ -77,13 +77,10 @@ router.post("/agregar", async (req, res, next) => {
 
 // ELIMINA
 
-router.get("/eliminar/:id", async (req, res, next) => { 
+router.get("/eliminar/:id", async (req, res, next) => {
   var id = req.params.id;
-  foto = await contenidoModel.deleteContenidoByID(id);
-  /* console.log(foto);
-  await cloudinary.v2.uploader.destroy(foto.public_id); */
+ await contenidoModel.deleteContenidoByID(id);
   res.redirect("/admin/contenido");
-
 });
 
 // SELECCIONA PARA MODIFICAR
@@ -105,12 +102,20 @@ router.post("/modificar", async (req, res, next) => {
       titulo: req.body.titulo,
       subtitulo: req.body.subtitulo,
       cuerpo: req.body.cuerpo,
-      id: req.body.id,
+      id: req.body.id
     };
-    var result = await cloudinary.v2.uploader.upload(req.file.path);
-    await contenidoModel.modificarContenidoByID(obj, result.url, req.body.id);
-    await fs.unlink(req.file.path);
-    res.redirect("/admin/contenido");
+
+    if (req.file.path != "") {
+
+      var result = await cloudinary.v2.uploader.upload(req.file.path);
+      await contenidoModel.modificarContenidoByIDImg(obj, result.url, req.body.id);
+      await fs.unlink(req.file.path);
+      res.redirect("/admin/contenido");
+    } else {
+      await contenidoModel.modificarContenidoByID(obj, req.body.id);
+      res.redirect("/admin/contenido");
+    }
+   
   } catch (error) {
     await fs.unlink(req.file.path);
     console.log(error);

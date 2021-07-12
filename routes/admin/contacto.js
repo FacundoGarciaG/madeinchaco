@@ -21,4 +21,12 @@ router.get("/", async function (req, res, next) {
   });
 });
 
+//ELIMINA 
+router.get("/eliminarmsj/:id", async (req, res, next) => {
+  var id = req.params.id;
+  foto = await contactoModel.deleteContactoByID(id);
+  res.redirect("/admin/contacto");
+});
+
+
 module.exports = router;

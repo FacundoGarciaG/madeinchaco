@@ -2,12 +2,13 @@
     <main>
         <div class="cuerpo">
             <div class="contenido">
-                <h3>CONTENIDO</h3> <div class="buscador">
+                <h3>CONTENIDO</h3>
+                {{!-- <div class="buscador">
                     <form action="/contenido" method="get">
                         <input type="search" placeholder="Buscar contenido" name="q" {{#if q}} value="{{q}}" {{/if}}>
                         <button><i class="fas fa-search"></i></button>
                     </form>
-                </div>
+                </div> --}}
                 <hr>
 
                 <div class="contenidoBD">
@@ -16,11 +17,11 @@
 
                         <img src="{{imagen}}" alt="{{titulo}}">
                         <div class="cont-text">
-                        <h4>{{titulo}}</h4>
-                        <p class="subtitulo">{{subtitulo}}</p>
-                        <p class="texto">{{{cuerpo}}}</p>
+                            <h4>{{titulo}}</h4>
+                            <p class="subtitulo">{{subtitulo}}</p>
+                            <p class="texto">{{{cuerpo}}}</p>
                         </div>
-                        
+
                     </figure>
                     {{/each}}
 

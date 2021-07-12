@@ -23,9 +23,16 @@ async function insertContacto(obj) {
     return rows;
   }
 
+  async function deleteContactoByID(id) {
+    var query = "delete from contacto where id = ?";
+    var rows = await pool.query(query, [id]);
+    return rows;
+  }
+
   module.exports = {
       insertContacto,
       getContacto,
-      buscarContacto
+      buscarContacto,
+      deleteContactoByID
   }
    

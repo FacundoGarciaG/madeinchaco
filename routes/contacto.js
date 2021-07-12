@@ -3,7 +3,7 @@ var router = express.Router();
 var nodemailer = require('nodemailer');
 var contactoModel = require('./../models/contactoModel');
 /* GET home page. */
-router.get('/', function (req, res, next) {
+router.get('/', async function (req, res, next) {
   res.render('contacto', {
     isContacto: true,
   });
@@ -41,6 +41,8 @@ router.post('/', async (req, res, next) => {
 volver: '/contacto',
 X: 'X' });
 });
+
+
 
 
 module.exports = router;
