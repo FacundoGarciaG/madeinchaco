@@ -51,7 +51,7 @@ router.post("/agregar", async (req, res, next) => {
       req.body.subtitulo != "" &&
       req.body.cuerpo != ""
     ) {
-      var result = await cloudinary.uploader.upload(req.file.path);
+      var result = await cloudinary.v2.uploader.upload(req.file.path);
       console.log(result);
 
       await contenidoModel.insertContenido(req.body, result.url);
@@ -110,7 +110,7 @@ router.post("/modificar", async (req, res, next) => {
 
     if (req.file.path != "") {
 
-      var result = await cloudinary.uploader.upload(req.file.path);
+      var result = await cloudinary.v2.uploader.upload(req.file.path);
       await contenidoModel.modificarContenidoByIDImg(obj, result.url, req.body.id);
       await fs.unlink(req.file.path);
       res.redirect("/admin/contenido");
