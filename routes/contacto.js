@@ -42,6 +42,16 @@ volver: '/contacto',
 X: 'X' });
 });
 
+/* router.get('/', async function(req, res, next) {
+  var contactos;
+    contactos = await contactoModel.mostrarContactoId(id);
+  res.render('contacto', {
+    isContacto:true,
+    contactos,
+  });
+}); */
+
+
 
 
 

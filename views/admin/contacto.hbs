@@ -42,11 +42,11 @@
                             <td class="telefono">{{telefono}}</td>
                             <td class="email">{{email}}</td>
                             <td>{{comentarios}}</td>
-                            <td><input {{!-- id="{{selector}}" --}} class="form-check-input mt-0" type="checkbox"
+                            <td><input class="form-check-input mt-0" type="checkbox" {{!-- href="/admin/contacto/muestra/{{id}}" --}}
                                     value="" aria-label="Checkbox for following text input"></td>
-                            <td><a class="btn btn-danger" href="/admin/contacto/eliminarmsj/{{id}}"><i
+                            <td><a class="btn btn-danger" href="/admin/contacto/eliminarmsj/{{id}}" onclick="return confirm('Estas seguro/a que deseas eliminar este contenido?')"><i
                                             class="far fa-trash-alt"></i></a></td>
-                        </tr>
+                        </tr>{{!--  --}}
                         {{/each}}
                     </tbody>
                 </table>

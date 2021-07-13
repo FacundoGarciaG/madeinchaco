@@ -3,36 +3,24 @@
         <div class="cuerpo">
             <div class="contenido">
                 <h3>CONTENIDO</h3>
-                {{!-- <div class="buscador">
-                    <form action="/contenido" method="get">
-                        <input type="search" placeholder="Buscar contenido" name="q" {{#if q}} value="{{q}}" {{/if}}>
-                        <button><i class="fas fa-search"></i></button>
-                    </form>
-                </div> --}}
+              
                 <hr>
 
                 <div class="contenidoBD">
                     {{#each contenidos}}
                     <figure class="contenidos">
 
-                        <img src="{{imagen}}" alt="{{titulo}}">
+                        <img src="{{imagen}}" alt="{{titulo}}" loading="lazy" >
                         <div class="cont-text">
                             <h4>{{titulo}}</h4>
                             <p class="subtitulo">{{subtitulo}}</p>
-                            <p class="texto">{{{cuerpo}}}</p>
+                            <a href="/contenidounico/{{id}}">Leer mas...</a>
                         </div>
 
                     </figure>
                     {{/each}}
 
                 </div>
-                {{#if is_search}}
-                {{#unless contenidos.length}}
-                <div class="alert alert-warning" role="alert">
-                    No encontramos resultados para "<b>{{q}}</b>"
-                </div>
-                {{/unless}}
-                {{/if}}
             </div>
         </div>
     </main>

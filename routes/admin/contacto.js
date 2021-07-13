@@ -28,5 +28,11 @@ router.get("/eliminarmsj/:id", async (req, res, next) => {
   res.redirect("/admin/contacto");
 });
 
+//MUESTRA 
+/* router.get("/muestra/:id", async (req, res, next) => {
+  var id = req.params.id;
+ await contactoModel.mostrarContactoId(id);
+  res.redirect("/admin/contacto");
+}); */
 
 module.exports = router;

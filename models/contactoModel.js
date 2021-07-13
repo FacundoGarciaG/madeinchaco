@@ -28,11 +28,18 @@ async function insertContacto(obj) {
     var rows = await pool.query(query, [id]);
     return rows;
   }
+/* 
+  async function mostrarContactoId(id) {
+    var query = "select mensaje from contacto where id = ?";
+    var rows = await pool.query(query, [id]);
+    return rows;
+  } */
 
   module.exports = {
       insertContacto,
       getContacto,
       buscarContacto,
-      deleteContactoByID
+      deleteContactoByID,
+     /*  mostrarContactoId */
   }
    

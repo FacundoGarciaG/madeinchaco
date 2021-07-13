@@ -67,6 +67,9 @@ justify-content: flex-end;
 
 /* admin login */
 
+.container form {
+    padding: 0;
+}
 
 .alert {
     margin-top: 5rem;
@@ -197,6 +200,7 @@ font-weight: 800;
 
     /*LOGIN*/
 
+
     .container > div {
         margin: 0 auto;
         width: 90%;
@@ -220,15 +224,66 @@ font-weight: 800;
         width: 50%;
         margin: auto;
     }
-}
 
-/*CONTACTO*/
+    /*CONTACTO*/
 
     .apellido, .telefono, .email {
-    display: none;
-    }
+        display: none;
+        }
+    
+        .container .listado {
+            width: 100%;
+            align-items: flex-end;
+        }
+    
+        /*AGREGAR*/
+    
+        input{
+            margin-top: 4rem;
+          }
+}
 
-    .container .listado {
-        width: 100%;
-        align-items: flex-end;
-    }
+
+
+    @media screen and (min-width:577px) and (max-width:1024px) {
+
+        .contenedor-cabezal {
+            margin: 1rem 0 1rem 0;
+            }
+
+        .contenedor-cabezal a h2 {
+            width: max-content;
+        }
+    
+        .navegador-cabezal {
+            position: absolute;
+            left: 0;
+        }
+
+        /*AGREGAR*/
+
+        .row {
+            width: 100%;
+        }
+        
+        input{
+          margin-top: 4rem;
+        }
+
+         /*CONTACTO*/
+
+    .apellido, .telefono, .email {
+        display: none;
+        }
+
+     .container-fluid .search {
+            display: flex;
+            align-items: flex-end;
+            }
+    
+     .container .listado {
+            width: 100%;
+            align-items: flex-end;
+        } 
+
+     }

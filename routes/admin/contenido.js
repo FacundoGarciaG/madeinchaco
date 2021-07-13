@@ -2,17 +2,14 @@ var express = require("express");
 var router = express.Router();
 var contenidoModel = require("../../models/contenidoModel");
 var cloudinary = require("cloudinary").v2;
+var fs = require("fs-extra");
 
 cloudinary.config({
-
-  /* cloud_name: process.env.CLOUDINARY_NAME,
+  cloud_name: process.env.CLOUDINARY_NAME,
   api_key: process.env.CLOUDINARY_API_KEY,
   api_secret: process.env.CLOUDINARY_API_SECRET,
-  cloudinary_url: process.env.CLOUDINARY_URL  */
-  
+  cloudinary_url: process.env.CLOUDINARY_URL,
 });
-
-var fs = require("fs-extra");
 
 /* GET home page. */
 
@@ -53,7 +50,6 @@ router.post("/agregar", async (req, res, next) => {
     ) {
       var result = await cloudinary.uploader.upload(req.file.path);
       console.log(result);
-
       await contenidoModel.insertContenido(req.body, result.url);
       console.log(req.body);
       console.log(req.file);
@@ -82,7 +78,7 @@ router.post("/agregar", async (req, res, next) => {
 
 router.get("/eliminar/:id", async (req, res, next) => {
   var id = req.params.id;
- await contenidoModel.deleteContenidoByID(id);
+  await contenidoModel.deleteContenidoByID(id);
   res.redirect("/admin/contenido");
 });
 
@@ -105,25 +101,28 @@ router.post("/modificar", async (req, res, next) => {
       titulo: req.body.titulo,
       subtitulo: req.body.subtitulo,
       cuerpo: req.body.cuerpo,
-      id: req.body.id
+      id: req.body.id,
     };
 
-    if (req.file.path != "") {
-
+    if (req.body.imagen != "") {
       var result = await cloudinary.uploader.upload(req.file.path);
-      await contenidoModel.modificarContenidoByIDImg(obj, result.url, req.body.id);
+      await contenidoModel.modificarContenidoByIDImg(
+        obj,
+        result.url,
+        req.body.id
+      );
       await fs.unlink(req.file.path);
       res.redirect("/admin/contenido");
     } else {
       await contenidoModel.modificarContenidoByID(obj, req.body.id);
       res.redirect("/admin/contenido");
     }
-   
+
   } catch (error) {
     await fs.unlink(req.file.path);
     console.log(error);
     res.render("admin/modificar", {
-      layout: "admin/layout",
+      layout: "admin/",
       error: true,
       message: "No se pudo modificar el contenido",
     });
