@@ -4,9 +4,12 @@ var contenidoModel = require("../../models/contenidoModel");
 var cloudinary = require("cloudinary");
 
 cloudinary.config({
+
   cloud_name: process.env.CLOUDINARY_NAME,
   api_key: process.env.CLOUDINARY_API_KEY,
   api_secret: process.env.CLOUDINARY_API_SECRET,
+  cloudinary_url: process.env.CLOUDINARY_URL 
+  
 });
 
 var fs = require("fs-extra");
@@ -48,7 +51,7 @@ router.post("/agregar", async (req, res, next) => {
       req.body.subtitulo != "" &&
       req.body.cuerpo != ""
     ) {
-      var result = await cloudinary.v2.uploader.upload(req.file.path);
+      var result = await cloudinary.uploader.upload(req.file.path);
       console.log(result);
 
       await contenidoModel.insertContenido(req.body, result.url);
@@ -107,7 +110,7 @@ router.post("/modificar", async (req, res, next) => {
 
     if (req.file.path != "") {
 
-      var result = await cloudinary.v2.uploader.upload(req.file.path);
+      var result = await cloudinary.uploader.upload(req.file.path);
       await contenidoModel.modificarContenidoByIDImg(obj, result.url, req.body.id);
       await fs.unlink(req.file.path);
       res.redirect("/admin/contenido");
