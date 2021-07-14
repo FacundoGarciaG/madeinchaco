@@ -69,7 +69,7 @@ router.post("/agregar", async (req, res, next) => {
     res.render("admin/agregar", {
       layout: "admin/layout",
       error: true,
-      message: "No se pudo cargar la novedad",
+      message: error,
     });
   }
 });
@@ -103,8 +103,6 @@ router.post("/modificar", async (req, res, next) => {
       cuerpo: req.body.cuerpo,
       id: req.body.id,
     };
-
-    if (req.body.imagen != "") {
       var result = await cloudinary.uploader.upload(req.file.path);
       await contenidoModel.modificarContenidoByIDImg(
         obj,
@@ -113,16 +111,12 @@ router.post("/modificar", async (req, res, next) => {
       );
       await fs.unlink(req.file.path);
       res.redirect("/admin/contenido");
-    } else {
-      await contenidoModel.modificarContenidoByID(obj, req.body.id);
-      res.redirect("/admin/contenido");
-    }
 
   } catch (error) {
     await fs.unlink(req.file.path);
     console.log(error);
     res.render("admin/modificar", {
-      layout: "admin/",
+      layout: "admin/layout",
       error: true,
       message: "No se pudo modificar el contenido",
     });

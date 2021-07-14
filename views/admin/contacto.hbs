@@ -27,7 +27,6 @@
                             <th class="col telefono">Telefono</th>
                             <th class="email" scope="col">Email</th>
                             <th class="col" scope="col">Mensaje</th>
-                            <th class="col">Mostrar</th>
                             <th class="col">Eliminar</th>
 
 
@@ -42,8 +41,6 @@
                             <td class="telefono">{{telefono}}</td>
                             <td class="email">{{email}}</td>
                             <td>{{comentarios}}</td>
-                            <td><input class="form-check-input mt-0" type="checkbox" {{!-- href="/admin/contacto/muestra/{{id}}" --}}
-                                    value="" aria-label="Checkbox for following text input"></td>
                             <td><a class="btn btn-danger" href="/admin/contacto/eliminarmsj/{{id}}" onclick="return confirm('Estas seguro/a que deseas eliminar este contenido?')"><i
                                             class="far fa-trash-alt"></i></a></td>
                         </tr>{{!--  --}}

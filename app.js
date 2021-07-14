@@ -11,6 +11,7 @@ var session = require('express-session');
 var indexRouter = require('./routes/index');
 var proyectoRouter = require('./routes/proyecto');
 var contenidoRouter = require('./routes/contenido');
+var contenidounicoRouter = require('./routes/contenidounico');
 var recorrerRouter = require('./routes/recorrer');
 var contactoRouter = require('./routes/contacto');
 var madeinchacoRouter = require('./routes/madeinchaco');
@@ -62,6 +63,7 @@ secured = async(req,res,next) => {
 app.use('/', indexRouter);
 app.use('/proyecto', proyectoRouter);
 app.use('/contenido', contenidoRouter);
+app.use('/contenidounico', contenidounicoRouter);
 app.use('/recorrer', recorrerRouter);
 app.use('/contacto', contactoRouter);
 app.use('/madeinchaco', madeinchacoRouter);
