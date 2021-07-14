@@ -69,7 +69,7 @@ router.post("/agregar", async (req, res, next) => {
     res.render("admin/agregar", {
       layout: "admin/layout",
       error: true,
-      message: error,
+      message: "No se pudo cargar este contenido",
     });
   }
 });
