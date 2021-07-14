@@ -5,15 +5,14 @@
                 <h3>{{contenido.titulo}}</h3>
                 <hr>
 
-                <div {{!-- class="contenidoBD" --}}>
+                <div>
                 
-                    <figure {{!-- class="contenidos" --}}>
+                    <figure class="contenido-unico">
 
                         <img src="{{contenido.imagen}}" alt="{{contenido.titulo}}" loading="lazy" >
-                        <div {{!-- class="cont-text" --}}>
-                            <h4>{{contenido.titulo}}</h4>
-                            <p {{!-- class="subtitulo" --}}>{{contenido.subtitulo}}</p>
-                            <p {{!-- class="cuerpo" --}}>{{contenido.cuerpo}}</p>
+                        <div>
+                            <p class="subtitulo" >{{contenido.subtitulo}}</p>
+                            <p class="texto-cuerpo">{{contenido.cuerpo}}</p>
                         </div>
 
                     </figure>

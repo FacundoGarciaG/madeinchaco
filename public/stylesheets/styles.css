@@ -378,7 +378,7 @@ h4::selection{
     width: 100%;
     margin: 3rem auto;
     display: grid;
-    grid-gap: 1rem;
+    grid-gap: 3rem;
     grid-template-areas: 
     "objetivos introduccion introduccion introduccion"
     "objetivos antecedentes antecedentes antecedentes";
@@ -624,6 +624,27 @@ textarea:focus, input:focus {
     font-weight: 600;
 }
 
+/*CONTENIDO UNICO*/
+.contenido-unico{
+    margin-top: 5rem;
+    text-align: center;
+}
+
+.contenido-unico img{
+    height: 400px;
+    width: 600px;
+}
+
+.contenido-unico div .subtitulo {
+    font-size: 5rem;
+    margin-top: 4rem;
+}
+
+.contenido-unico div .texto-cuerpo{
+    margin-top: 2rem;
+    font-size: 2rem;
+}
+
 /*correcciones bootstrap*/
 
 *, ::after, ::before {
@@ -662,6 +683,7 @@ h2 {
     .contenedor-cabezal a h2 {
         width: 100%;
         font-size: 2rem;
+        margin-left: 1.5rem;
     }
 
     .icono{
@@ -821,21 +843,24 @@ h2 {
        transition: none;
     }
    
+/*CONTENIDO UNICO*/
+.contenido-unico{
+    margin-top: 2rem;
+    text-align: center;
+}
 
-   /*  .buscador {
-        margin: 2rem 0 1rem;
-    }
-    .buscador form input {
-        border: 1px solid #000;
-        font-size: 1.5rem;
-        padding: .5rem;
-    }
-    
-    .buscador form button {
-        height: 2.6rem;
-        width: 2.5rem;
-        font-size: 1.5rem;
-    } */
+.contenido-unico img{
+    height: 250px;
+    width: 350px;
+}
+
+.contenido-unico div .subtitulo {
+    font-size: 2rem;
+}
+
+.contenido-unico div .texto-cuerpo{
+    font-size: 1.5rem;
+}
     
 
     /*media recorrer*/
@@ -948,7 +973,7 @@ h2 {
     }
 
     .cuerpo h3 {
-    font-size: 1.6rem;
+    font-size: 4rem;
     }
 
     .explicativo  p{
@@ -1054,6 +1079,21 @@ h2 {
        height: 200px;
        transition: none;
     }
+
+    /*CONTENIDO UNICO*/
+
+.contenido-unico img{
+    height: 450px;
+    width: 650px;
+}
+
+.contenido-unico div .subtitulo {
+    font-size: 4rem;
+}
+
+.contenido-unico div .texto-cuerpo{
+    font-size: 2rem;
+}
 
     /*media recorrer*/
 
