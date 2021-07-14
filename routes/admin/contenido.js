@@ -103,6 +103,7 @@ router.post("/modificar", async (req, res, next) => {
       cuerpo: req.body.cuerpo,
       id: req.body.id,
     };
+
       var result = await cloudinary.uploader.upload(req.file.path);
       await contenidoModel.modificarContenidoByIDImg(
         obj,
